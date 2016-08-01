@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+    <h1>Messenger</h1>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="container">
+    <p>Choose a date</p>
+    <input id="date">
+    <br>
+    <button id="selectDate">Check Availability</button>
+		<script>
+			$('input#date').datepicker({minDate: 0});
+      $('#selectDate')[0].onclick = function(){console.log("works")}
+		</script>
+    <% @appointments.each do |appointment| %>
+    <div class="message">
+      <p class="content"><%= appointment.date %></p>
+      <p class="time"><%= appointment.created_at %></p>
+    </div>
+    <% end %>
+    <%= link_to 'Make Reservation', "appointments/new" %>
+  </div>
+</div>
