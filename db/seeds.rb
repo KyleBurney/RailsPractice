@@ -11,6 +11,3 @@ m1 = Message.create(content: "We're at the beach so you should meet us here! I m
 
 m2 = Message.create(content: "Let's meet there!")
 
-a1 = Appointment.create(date: "11/11/2011")
-
-a2 = Message.create(content: "Let's meet there!")
